@@ -1,9 +1,10 @@
 import React from 'react';
 
 const ResultItem = (props) => {
+	console.log(props);
 	return(
 		<li>
-			Thing
+			{props.result.title}
 		</li>
 	);
 };

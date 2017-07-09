@@ -12,26 +12,30 @@ class App extends Component {
 
 		this.state = {
 			searchTerm: '',
-			results: ''
+			results: null
 		};
 
-		this.handleSubmit = this.handleSubmit.bind(this)
-	}
-	handleSubmit(searchTerm) {
-		console.log(searchTerm);
-		this.setState ({
-			searchTerm: searchTerm,
-			results: 'There is a result'
-		})
-		// var newState = {};
-		// this.setState((searchTerm) => {
-		// 	newState.searchTerm = searchTerm;
-		// 	console.log(newState.searchTerm);
-		// });
-		// return newState;
+		this.searchBooks = this.searchBooks.bind(this);
 	}
 	searchBooks(searchTerm) {
 		console.log(`***Searching for comics named: ${searchTerm}***`);
+
+		// AJAX to the Marvel API with the searchTerm.
+		// Then update the state with the results array
+		this.setState ({
+			searchTerm: searchTerm,
+			results: [
+				{
+					title: 'Spiderman vol 1'
+				},
+				{
+					title: 'Amazing Spiderman'
+				},
+				{
+					title: 'Spectactular Spiderman'
+				}
+			]
+		})
 	}
   render() {
 		var searchTerm = this.state.searchTerm;
@@ -40,27 +44,20 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
 					<h1>Unlimited</h1>
-          {/* <h2>Welcome to React</h2> */}
         </div>
-        {/* <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p> */}
-
-				{!searchTerm &&
-					<section id='search'>
-						<Search
-							onSubmit={this.searchBooks}
-						/>
-					</section>}
-				{/* {results && */}
+				<section id='search'>
+					<Search
+						onSubmit={this.searchBooks}
+					/>
+				</section>
+				{results &&
 				<section id='results'>
 					<Results
 						searchTerm={searchTerm}
 						results={results}
 					/>
-				</section>
+				</section>}
       </div>
     );
   }
