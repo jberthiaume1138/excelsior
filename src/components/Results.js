@@ -4,6 +4,8 @@ import ResultItem from './ResultItem';
 
 const Results = (props) => {
 	var result = props.searchTerm;
+	console.log(props.searchTerm);
+	console.log(props.results);
 
 	return(
 		<div>
@@ -12,6 +14,7 @@ const Results = (props) => {
 				<ResultItem
 					key='cheese'
 				/>
+				<li>{props.results}</li>
 			</ul>
 		</div>
 	);

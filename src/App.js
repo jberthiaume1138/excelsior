@@ -31,11 +31,12 @@ class App extends Component {
 		// return newState;
 	}
 	searchBooks(searchTerm) {
-		console.log(searchTerm);
+		console.log(`***Searching for comics named: ${searchTerm}***`);
 	}
   render() {
 		var searchTerm = this.state.searchTerm;
 		var results = this.state.results;
+
     return (
       <div className="App">
         <div className="App-header">
@@ -50,17 +51,16 @@ class App extends Component {
 				{!searchTerm &&
 					<section id='search'>
 						<Search
-							searchTerm={searchTerm}
-							onSearchTermChange={searchBooks}
-
+							onSubmit={this.searchBooks}
 						/>
 					</section>}
-				{results &&
-					<section id='results'>
-						<Results
-							searchTerm={searchTerm}
-						/>
-					</section>}
+				{/* {results && */}
+				<section id='results'>
+					<Results
+						searchTerm={searchTerm}
+						results={results}
+					/>
+				</section>
       </div>
     );
   }
