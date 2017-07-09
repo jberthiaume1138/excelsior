@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import logo from "./logo.svg";
-import "./App.css";
+import logo from './logo.svg';
+import './App.css';
 
 import Search from './components/Search';
 import Results from './components/Results';
@@ -22,6 +22,8 @@ class App extends Component {
 
 		// AJAX to the Marvel API with the searchTerm.
 		// Then update the state with the results array
+
+		// here is some dummy data
 		this.setState ({
 			searchTerm: searchTerm,
 			results: [
@@ -42,8 +44,8 @@ class App extends Component {
 		var results = this.state.results;
 
     return (
-      <div className="App">
-        <div className="App-header">
+      <div className='App'>
+        <div className='App-header'>
 					<h1>Unlimited</h1>
         </div>
 				<section id='search'>

@@ -3,10 +3,6 @@ import React from 'react';
 import ResultItem from './ResultItem';
 
 const Results = (props) => {
-
-	// console.log(props.searchTerm);
-	// console.log(props.results);
-
 	const resultItems = props.results.map(result => {
 		return (
 			<ResultItem
@@ -15,9 +11,6 @@ const Results = (props) => {
 			/>
 		);
 	});
-
-	// console.log(resultItems);
-
 	return (
 		<div>
 			<h2>Results for {props.searchTerm}</h2>

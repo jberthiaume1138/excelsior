@@ -27,16 +27,16 @@ export default class Search extends React.Component {
 	render() {
 		return (
 			<div>
-				<form className="search-group" onSubmit={this.handleSubmit}>
-					<label className="small-text" htmlFor="search-box">
+				<form className='search-group' onSubmit={this.handleSubmit}>
+					<label className='small-text' htmlFor='search-box'>
 						Enter the comic series you wish to check by title.
 					</label>
 					<div>
 						<input
-							id="search-box"
-							type="text"
-							placeholder="Ex. Spiderman"
-							autoComplete="off"
+							id='search-box'
+							type='text'
+							placeholder='Ex. Spiderman'
+							autoComplete='off'
 							value={this.state.searchTerm}
 							onChange={this.handleInputChange}
 						/>
