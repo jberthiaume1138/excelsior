@@ -9,8 +9,8 @@ export default class Search extends React.Component {
 			searchTerm: ''
 		};
 
-		this.handleInputChange = this.handleInputChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+		// this.handleInputChange = this.handleInputChange.bind(this);
+		// this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	handleInputChange(event) {
 		var value = event.target.value;
@@ -27,7 +27,7 @@ export default class Search extends React.Component {
 	render() {
 		return (
 			<div>
-				<form className='search-group' onSubmit={this.handleSubmit}>
+				<form className='search-group' onSubmit={event => this.handleSubmit(event)}>
 					<label className='small-text' htmlFor='search-box'>
 						Enter the comic series you wish to check by title.
 					</label>
@@ -38,7 +38,7 @@ export default class Search extends React.Component {
 							placeholder='Ex. Spiderman'
 							autoComplete='off'
 							value={this.state.searchTerm}
-							onChange={this.handleInputChange}
+							onChange={event => this.handleInputChange(event)}
 						/>
 						<button
 							className='submit'
