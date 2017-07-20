@@ -28,9 +28,6 @@ export default class Search extends React.Component {
 		return (
 			<div>
 				<form className='search-group' onSubmit={event => this.handleSubmit(event)}>
-					<label className='small-text' htmlFor='search-box'>
-						Enter the comic series you wish to check by title.
-					</label>
 					<div>
 						<input
 							id='search-box'
@@ -47,6 +44,9 @@ export default class Search extends React.Component {
 							Search
 						</button>
 					</div>
+					<label className='small-text' htmlFor='search-box'>
+						Enter the Marvel Comics series title
+					</label>
 				</form>
 			</div>
 		);
